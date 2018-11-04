@@ -32,7 +32,7 @@ class AuthorDetail extends Component {
     const authorID = this.props.match.params.authorID;
     this.setState({ loading: true });
     instance
-      .get(`/api/authors/${authorID}`)
+      .get(`/api/authors/${authorID}/`)
       .then(res => res.data)
       .then(author => this.setState({ author: author, loading: false }))
       .catch(err => console.error(err));
